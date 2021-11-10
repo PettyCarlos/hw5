@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="utf-8">
+  <title>CNIT 133 - HW5, Part 3</title>
+  <meta name="description" content="Assignment Homework 5: Arrays">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CDN Link -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+  <!-- Custom CSS Link -->
+  <link rel="stylesheet" href="css/styles.css">
+
+ <style>
+
+    
+      body {
+          background-color:cadetblue
+      }
+         #holygrail-container{display:grid; grid-template-columns: 190px 1fr 190px; background: cadetblue; height: 100%; min-width: 400px; min-height: 270px;
+         }
+        
+         header, footer {grid-column: span 4;
+                        }
+         
+         nav {display: inline; padding-bottom: 25px; display: flex; align-items: center;
+             }
+           
+            nav ul{list-style-type:none; padding:0; 
+                  }
+            
+            nav ul li{ display: inline-block;
+                       margin:0 5px;
+                       border:2px solid black;
+                      border-radius: 10px;
+                       margin-right: 350px;
+                       background-color: cadetblue;
+                       text-align:center;
+                       width: 150px;
+                       height: 30px; 
+                       line-height:30px;
+                        margin-bottom: 5px;}
+            
+            nav ul li a {text-decoration: none; font-weight: bold; color:white;
+                        }
+         
+         ul li { list-style-type: none; 
+          }
+ </style>
+         
+</head>
+<body>
+
+
+
+ <nav>
+    <ul>
+            <li><a href="https://pettycarlos.github.io/CNIT-133-Homework-1/">Homepage</a></li>
+             <li><a href="https://pettycarlos.github.io/hw2/">Homework 2</a></li>
+            <li><a href= "https://pettycarlos.github.io/hw3/">Homework 3</a></li>
+            <li><a href= "https://pettycarlos.github.io/CNIT-133-hw4/">Homework 4</a></li>
+            <li><a href="https://pettycarlos.github.io/hw5/">Homework 5</a></li>
+            <li><a href="https://pettycarlos.github.io/hw6/">Homework 6</a></li>
+            <li><a href= "https://pettycarlos.github.io/hw7/">Homework 7</a></li>
+            <li><a href="https://pettycarlos.github.io/hw8/">Homework 8</a></li>
+            
+        </ul>
+            </nav>
+            
+        
+            <ol>
+  <li><a href="hw5pt1.html">Part 1 - Form Validation </a></li>
+  <li><a href="hw5pt2.html">Two Pulldown Menus using Arrays</a></li>
+  <li><a href="hw5pt3.html">Part 3 - State Information using Arrays and Input Boxes</a></li>
+</ol>
+
+
+
+	<div>
+    <div>
+      <h1>Homework 5 - Part 3</h1>
+      <p>Arrays</p>
+    </div>
+  </div>
+
+  <!-- Main Body Content -->
+
+  <section>
+      <p class="explanation"> Table of Data about Several of Our States from the July/2019 Census</p>
+    <div class="hw5-part1-divbox">
+
+      <h2>2018 Census Data</h2>
+
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col">State Abbr</th>
+            <th scope="col">State Name</th>
+            <th scope="col">Capital</th>
+            <th scope="col">Population</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">AL</th>
+            <td>Alabama</td>
+            <td>Montgomery</td>
+            <td>4,903,185</td>
+          </tr>
+          <tr>
+            <th scope="row">AK</th>
+            <td>Alaska</td>
+            <td>Juneau</td>
+            <td>731,545</td>
+          </tr>
+          <tr>
+            <th scope="row">AZ</th>
+            <td>Arizona</td>
+            <td>Phoenix</td>
+            <td>7,278,717</td>
+          </tr>
+          <tr>
+            <th scope="row">AR</th>
+            <td>Arkansas</td>
+            <td>Little Rock</td>
+            <td>3,017,825</td>
+          </tr>
+          <tr>
+            <th scope="row">CA</th>
+            <td>California</td>
+            <td>Sacramento</td>
+            <td>39,512,223</td>
+          </tr>
+          <tr>
+            <th scope="row">CO</th>
+            <td>Colorado</td>
+            <td>Denver</td>
+            <td>5,758,736</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <form name="SearchForm">
+
+        <div class="input-group mb-3">
+          <input type="text" class="form-control" placeholder="Enter a State's name (full or abbreviated)" button aria-label="Recipient's username" aria-describedby="button-addon2" name="stateSearch" id="searchBar">
+          <div class="input-group-append">
+            <button class="btn btn-outline-danger" type="button" id="dataSearchBTN">State Info</button>
+            <button class="btn btn-outline-danger" type="button" id="clearBar">Clear Search Bar</button>
+          </div>
+        </div>
+
+        <textarea class="form-control" placeholder="Results will be shown here" rows="5" name="results" id="textArea" readonly></textarea>
+
+      </form>
+
+    </div>
+
+    
+  </section>
+
+  
+  <script>
+    var censusDataArray = [
+      ["AL", "ALABAMA", "Montgomery", "4,903,185"],
+      ["AK", "ALASKA", "Juneau", "731,545"],
+      ["AZ", "ARIZONA", "Phoenix", "7,278,717"],
+      ["AR", "ARKANSAS", "Little Rock", "3,017,825"],
+      ["CA", "CALIFORNIA", "Sacramento", "39,512,223"],
+      ["CO", "COLORADO", "Denver", "5,758,736"]
+    ];
+
+    function dataSearch() {
+      var search = document.forms["SearchForm"].elements["stateSearch"].value;
+      search = search.toUpperCase();
+
+      var discovered = false;
+      for (var row = 0; row < censusDataArray.length; row++){
+        if ((censusDataArray[row][0] == search) || (censusDataArray[row][1] == search)){
+          document.forms["SearchForm"].elements["results"].value = ("Thanks for your inquiry, here is the info requested: " + "\nState abbreviation - " + censusDataArray[row][0] + "\nState Name - " + censusDataArray[row][1] + "\nCapital - " + censusDataArray[row][2] + "\nPopulation - " + censusDataArray[row][3]);
+          row = censusDataArray.length;
+          discovered = true;
+        }
+      }
+      if (discovered == false){
+        document.forms["SearchForm"].elements["results"].value = "No such state data exists, please search from the table above.";
+      }
+    }
+
+    function eraseText() {
+      document.getElementById("searchBar").value = document.getElementById("searchBar").defaultValue;
+      document.getElementById("textArea").value = "";
+    }
+
+    var el = document.getElementById('dataSearchBTN');
+    el.addEventListener('click', dataSearch, false);
+
+    var el = document.getElementById('clearBar');
+    el.addEventListener('click', eraseText, false);
+  </script>
+
+ 
+
+</body>
+
+</html>

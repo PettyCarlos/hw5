@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="utf-8">
+<title>CNIT 133 Homework5 - Part 1</title>
+  <meta name="description" content="Assignment Homework 5 of CNIT 133 - Arrays">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CDN Link -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+  <!-- Custom CSS Link -->
+  <link rel="stylesheet" href="css/styles.css">
+
+ <style>
+        table {
+	border-collapse: collapse;
+}	
+
+
+td {
+	text-align: right;
+	padding: 10px;
+	font-size:15px;
+	color: #000000;
+	font-weight: bold;
+	padding: 2px;
+}
+     .error {
+
+	font: normal 10px arial;
+	padding: 3px;
+	margin: 3px;
+	background-color: yellow;
+     }
+    
+      body {
+          background-color:cadetblue
+      }
+         #holygrail-container{display:grid; grid-template-columns: 190px 1fr 190px; background: cadetblue; height: 100%; min-width: 400px; min-height: 270px;
+         }
+        
+         header, footer {grid-column: span 4;
+                        }
+         
+         nav {display: inline; padding-bottom: 25px; display: flex; align-items: center;
+             }
+           
+            nav ul{list-style-type:none; padding:0; 
+                  }
+            
+            nav ul li{ display: inline-block;
+                       margin:0 5px;
+                       border:2px solid black;
+                      border-radius: 10px;
+                       margin-right: 350px;
+                       background-color: cadetblue;
+                       text-align:center;
+                       width: 150px;
+                       height: 30px; 
+                       line-height:30px;
+                        margin-bottom: 5px;}
+            
+            nav ul li a {text-decoration: none; font-weight: bold; color:white;
+                        }
+         
+         ul li { list-style-type: none; 
+          }
+ </style>
+         
+</head>
+<body>
+
+
+
+ <nav>
+    <ul>
+            <li><a href="https://pettycarlos.github.io/CNIT-133-Homework-1/">Homepage</a></li>
+             <li><a href="https://pettycarlos.github.io/hw2/">Homework 2</a></li>
+            <li><a href= "https://pettycarlos.github.io/hw3/">Homework 3</a></li>
+            <li><a href= "https://pettycarlos.github.io/CNIT-133-hw4/">Homework 4</a></li>
+            <li><a href="https://pettycarlos.github.io/hw5/">Homework 5</a></li>
+            <li><a href="https://pettycarlos.github.io/hw6/">Homework 6</a></li>
+            <li><a href= "https://pettycarlos.github.io/hw7/">Homework 7</a></li>
+            <li><a href="https://pettycarlos.github.io/hw8/">Homework 8</a></li>
+            
+        </ul>
+            </nav>
+            
+        
+            <ol>
+  <li><a href="hw5pt1.html">Part 1 - Form Validation </a></li>
+  <li><a href="hw5pt2.html">Two Pulldown Menus using Arrays</a></li>
+  <li><a href="hw5pt2.html">Part 3 - State Information using Arrays and Input Boxes</a></li>
+</ol>
+
+
+
+	<div>
+    <div>
+      <h1>Homework 5 - Part 1</h1>
+      <p class="lead">Arrays</p>
+    </div>
+  </div>
+
+  <!-- Main Body Content -->
+
+
+ 
+    <div class="hw4-part1-divbox">
+      <p class="travel-newsletter-p">Learn how to Play any Sports of Choice in One Month</p><br>
+
+      <form id="form" onsubmit="return false" class="integer-calculator">
+
+ 
+
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="email">Enter email address Here</label>
+            <input class="form-control" type="email" placeholder="name@email.com" id="email" required>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="Activities">Sports that I am Most Interested In</label>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="Activities" name="Activities">
+            <label class="form-check-label">
+              Soccer
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="cb2" name="cb2">
+            <label class="form-check-label">
+              Football
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="cb3" name="cb3">
+            <label class="form-check-label">
+            Track and Field
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="cb4" name="cb4">
+            <label class="form-check-label">
+              Cricket
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="cb5" name="cb5">
+            <label class="form-check-label">
+              Basketball
+            </label>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>The Day that I want to Learn On</label>
+          <select class="form-control" id="regionList" required>
+            <option value="">Choose Day</option>
+            <option value="Monday">Monday</option>
+            <option value="Tuesday">Tuesday</option>
+            <option value="Wednesday">Wednesday</option>
+            <option value="Thursday">Thursday</option>
+            <option value="Friday">Friday</option>
+            <option value="Saturday">Saturday</option>
+            <option value="Sunday">Sunday</option>
+            
+          </select>
+        </div>
+
+        <!-- a name for the radio input below is needed so user is forced to select one or the other, once selected -->
+        <div class="form-group">
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="emailRadios" id="radio1" required>
+            <label class="form-check-label">Yes, please send me updates on additional Sports when they are available.</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="emailRadios" id="radio2">
+            <label class="form-check-label">
+              No, I do not want to receive any updates of when additional Sports are available.
+            </label>
+          </div>
+        </div>
+
+        <button type="button" class="btn btn-danger" id="signUp">Sign Me Up!</button>
+        <br><br>
+        <div id="successDiv"></div>
+
+      </form>
+    </div>
+
+   
+  
+  <script>
+    var tally = 0;
+
+    function validateEmail() {
+      var subEmail = document.getElementById("subEmail").value;
+      var validEmail = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/.test(subEmail);
+      if (!validEmail) {
+        alert("please enter a valid email");
+      } else {
+        tally++;
+      }
+    }
+
+    function validateCheckboxes() {
+      var cb1 = document.getElementById("cb1").checked;
+      var cb2 = document.getElementById("cb2").checked;
+      var cb3 = document.getElementById("cb3").checked;
+      var cb4 = document.getElementById("cb4").checked;
+      var cb5 = document.getElementById("cb5").checked;
+      if (cb1 === false && cb2 === false && cb3 === false && cb4 === false && cb5 === false) {
+        alert("please check at least one sport box");
+      } else {
+        tally++;
+      }
+    }
+
+    // document.getElementById("regionList").addEventListener("change", validateSelectMenu);
+    function validateSelectMenu() {
+      var x = document.getElementById("regionList");
+      if (x.selectedIndex == "") {
+        alert("please choose a a day you interested in");
+      } else {
+        tally++;
+      }
+    }
+
+    function validateRadio() {
+      var radio1 = document.getElementById("radio1").checked;
+      var radio2 = document.getElementById("radio2").checked;
+      if (radio1 == false && radio2 == false) {
+        alert("please check whether or not you want to receive additional updates on Sports Added To The Program");
+      } else {
+        tally++;
+      }
+    }
+
+    function clickCounter() {
+      var count = 0;
+      var countButton = document.getElementById("signUp");
+      countButton.onclick = function() {
+        count++;
+      };
+      if (count = 2) {
+        tally = 0;
+      }
+    }
+
+    function allClear() {
+      if (tally > 3) {
+        document.getElementById("successDiv").innerHTML = "Congratulatios your Application was Submitted Successfully.";
+      }
+    }
+
+    var el = document.getElementById('signUp');
+    el.addEventListener('click', validateEmail, false);
+    el.addEventListener('click', validateCheckboxes, false);
+    el.addEventListener('click', validateSelectMenu, false);
+    el.addEventListener('click', validateRadio, false);
+    el.addEventListener('click', allClear, false);
+    el.addEventListener('click', clickCounter, false);
+  </script>
+
+
+</body>
+
+</html>
